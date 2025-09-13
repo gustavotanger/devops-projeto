@@ -6,23 +6,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      -uses: actions/checkout@v2
-      -name: Configurar Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.10'
-      -name: Instalar dependencias
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      -name: Rodar testes
-      run: echo "Nenhum teste ainda"
+      - uses: actions/checkout@v2
+      - name: Configurar Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Rodar testes
+        run: echo "Nenhum teste ainda"
       
   deploy:
     runs-on: ubuntu-lateste
     needs: build
     steps:
-      -name: Simular Deploy
-      run: echo "Deploy realizado com sucesso"
+      - name: Simular Deploy
+        run: echo "Deploy realizado com sucesso"
 
       
