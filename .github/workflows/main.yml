@@ -35,4 +35,4 @@ lint:
   steps:
     - uses: actions/checkout@v2
     - name: Rodar Linter
-    run: echo " executando analise de codigo" 
+      run: echo " executando analise de codigo" 
