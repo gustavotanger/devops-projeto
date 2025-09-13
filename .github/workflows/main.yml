@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, deploy]
     steps:
       - uses: actions/checkout@v2
       - name: Configurar Python
@@ -19,7 +19,7 @@ jobs:
         run: echo "Nenhum teste ainda"
       
   deploy:
-    runs-on: ubuntu-lateste
+    runs-on: [self-hosted, linux, deploy]
     needs: build
     steps:
       - name: Simular Deploy
