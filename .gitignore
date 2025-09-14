@@ -1,1 +1,24 @@
+# Ignorar a pasta do runner local
+actions-runner/
+
+# Ignorar arquivos temporários
+*.log
+*.tmp
+*.swp
+*.bak
+
+# Ignorar builds e cache
+dist/
+build/
+__pycache__/
+node_modules/
+
+# Ignorar arquivos sensíveis
+.env
+*.key
+*.pem
+
+# Não ignorar workflows e scripts importantes
+!.github/workflows/*.yml
+!scripts/**
 actions-runner/
