@@ -25,7 +25,7 @@ jobs:
 
       - name: Run tests
         run: |
-          if [ -f test_app.py ]; then pytest -v; else echo "Nenhum teste encontrado"; fi
+          if [ -f tests/test_logic_app.py ]; then pytest -v; else echo "Nenhum teste encontrado"; fi
 
   docker:
     runs-on: ubuntu-latest
