@@ -1,11 +1,5 @@
-import sys
-import os
-import pytest
-
-# Inclui a raiz do projeto no PYTHONPATH
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 from app_logic import add, is_even, reverse_string, capitalize_words, divide
+import pytest
 
 
 def test_add():
