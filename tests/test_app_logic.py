@@ -1,4 +1,9 @@
+import sys
+import os
 import pytest
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from app_logic import add, is_even, reverse_string, capitalize_words, divide
 
 def test_add():
