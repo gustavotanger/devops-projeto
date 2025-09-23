@@ -4,7 +4,7 @@ import pytest
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from app_logic.py import add, is_even, reverse_string, capitalize_words, divide
+from app_logic import add, is_even, reverse_string, capitalize_words, divide
 
 def test_add():
     assert add(2, 3) == 5
