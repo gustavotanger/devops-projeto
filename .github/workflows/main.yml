@@ -22,7 +22,14 @@ jobs:
           fi 
 
       - name: Rodar testes 
-        run: echo "Nenhum teste ainda" 
+        run: echo "Nenhum teste ainda"
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Rodar Linter
+        run: echo "Executando análise de código"
 
   deploy: 
     runs-on: [self-hosted, linux, deploy] 
@@ -30,20 +37,11 @@ jobs:
     steps: 
       - name: Simular Deploy 
         run: echo "Deploy realizado com sucesso"
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Rodar Linter
-        run: echo " executando analise de codigo" 
-
-  outputs:
-      status: ${{ job.status }}
 
   notify:
     needs: build
     runs-on: ubuntu-latest
-    if: failure()
+    if: ${{ failure() }}
     steps:
       - name: Send GitHub notification
         run: |
