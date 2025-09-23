@@ -36,3 +36,15 @@ jobs:
       - uses: actions/checkout@v2
       - name: Rodar Linter
         run: echo " executando analise de codigo" 
+
+  outputs:
+      status: ${{ job.status }}
+
+  notify:
+    needs: build
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Send GitHub notification
+        run: |
+          echo "🚨 O build falhou! Confira os logs do workflow no GitHub Actions."
