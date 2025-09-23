@@ -21,10 +21,11 @@ jobs:
             pip install -r requirements.txt
           fi 
 
-      - name: Rodar testes 
+      - name: Rodar testes
         run: |
           pip install pytest
-          pytest --maxfail=1 --disable-warnings -q
+          # Incluindo a raiz do projeto no PYTHONPATH
+          PYTHONPATH=. pytest --maxfail=1 --disable-warnings -q
 
   lint:
     runs-on: ubuntu-latest
