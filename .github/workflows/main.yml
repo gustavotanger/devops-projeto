@@ -22,14 +22,18 @@ jobs:
           fi 
 
       - name: Rodar testes 
-        run: echo "Nenhum teste ainda"
+        run: |
+          pip install pytest
+          pytest --maxfail=1 --disable-warnings -q
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Rodar Linter
-        run: echo "Executando análise de código"
+        run: |
+          pip install flake8
+          flake8 .
 
   deploy: 
     runs-on: [self-hosted, linux, deploy] 
